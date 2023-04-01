@@ -25,9 +25,9 @@ const content = `
   </ul>
 
   <div class="burger">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="top"></span>
+    <span class="mid"></span>
+    <span class="bottom"></span>
   </div>
 
   <div class="hidden-nav">
