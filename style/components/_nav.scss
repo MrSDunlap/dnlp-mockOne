@@ -9,11 +9,14 @@ nav {
   height: auto;
   display: flex;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
+  padding: 4rem 0;
   justify-content: center;
   .nav-container {
     display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
     justify-content: space-between;
     align-items: center;
     width: clamp(550px, 90%, 1000px);
@@ -23,11 +26,15 @@ nav {
     .logo {
       @include g.header-01;
       z-index: 100;
+      cursor: pointer;
       .logo-dot {
         color: var(--accent);
       }
     }
     .nav-links {
+      padding: 1rem 3rem;
+      border-radius: 50vw;
+      background-color: var(--accent);
       display: flex;
       gap: 4rem;
       @include g.breakpoint-down(tablet) {
@@ -38,24 +45,26 @@ nav {
         .link {
           text-decoration: none;
           @include g.body-03;
-          color: var(--darkgrey-01);
+          color: var(--white);
           position: relative;
           &::before {
             content: "[";
             position: absolute;
-            top: 0;
+            top: -10%;
             left: 50%;
             opacity: 0;
-            color: var(--grey-00);
+            color: var(--white);
+            font-weight: bold;
             transition: all 150ms ease;
           }
           &::after {
             content: "]";
             position: absolute;
-            top: 0;
+            top: -10%;
             right: 50%;
             opacity: 0;
-            color: var(--grey-00);
+            color: var(--white);
+            font-weight: bold;
             transition: all 150ms ease;
           }
           &:hover::before {
@@ -93,13 +102,13 @@ nav {
         transition: all 250ms ease;
 
         &.top-rotation {
-          transform: rotate(225deg);
-          transform: translateY(6.5px);
+          transform: rotate(225deg) translate(-4.6px, -4.6px);
         }
         &.bottom-rotation {
-          transform: rotate(-225deg) translate(-6.5px, 6.5px);
+          transform: rotate(-225deg) translate(-4.6px, 4.6px);
         }
         &.fade {
+          transform: translateX(-20px);
           opacity: 0;
         }
       }
@@ -130,6 +139,37 @@ nav {
           text-decoration: none;
           @include g.sub-header-02;
           color: var(--grey-01);
+          position: relative;
+          transition: all 150ms ease;
+          &::before {
+            content: "[";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            opacity: 0;
+            color: var(--grey-00);
+            transition: all 150ms ease;
+          }
+          &::after {
+            content: "]";
+            position: absolute;
+            top: 0;
+            right: 50%;
+            opacity: 0;
+            color: var(--grey-00);
+            transition: all 150ms ease;
+          }
+          &:hover::before {
+            left: -1.5rem;
+            opacity: 1;
+          }
+          &:hover::after {
+            right: -1.5rem;
+            opacity: 1;
+          }
+          &:hover {
+            color: var(--accent);
+          }
         }
       }
 

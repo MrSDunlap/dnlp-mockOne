@@ -1,6 +1,6 @@
 // Home css stylesheet
 
-@import "../globals";
+@use "../globals/" as g;
 
 #home {
   display: flex;
@@ -11,7 +11,7 @@
     height: auto;
     width: clamp(300px, 90%, 1000px);
     .h-title {
-      @include header-02;
+      @include g.header-02;
       color: var(--darkgrey-01);
       padding-bottom: 1rem;
     }
@@ -26,33 +26,75 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        @include sub-header-02;
+        animation: jobLoop 10000ms 3000ms infinite;
+        transition: all 150ms ease;
+
+        @include g.sub-header-01;
         color: var(--accent);
+
+        @keyframes jobLoop {
+          0% {
+            transform: translateY(-38px);
+          }
+          16.66% {
+            transform: translateY(-76px);
+          }
+          33.32% {
+            transform: translateY(-114px);
+          }
+          49.98% {
+            transform: translateY(-152px);
+          }
+          66.64% {
+            transform: translateY(-190px);
+          }
+          83.30% {
+            transform: translateY(-228px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
       }
     }
     .h-body-copy {
-      @include body-01;
+      @include g.body-01;
       color: var(--darkgrey-00);
       padding: 2rem 0;
+      @include g.breakpoint-down(tablet) {
+        @include g.body-02;
+      }
+      @include g.breakpoint-down(mobile) {
+        @include g.body-03;
+      }
     }
     .h-buttons {
       display: flex;
       gap: 2rem;
       .btn {
         padding: 1.5rem 3rem;
-        border-radius: 0.2rem;
-        border: solid 0.2rem var(--accent);
-        color: var(--darkgrey-01);
-        @include body-03;
+        border-radius: 50vw;
+        background-color: var(--accent);
+        border: none;
+        color: var(--white);
+        @include g.sub-header-03;
+      }
+      @include g.breakpoint-down(mobile) {
+        flex-direction: column;
+        .btn {
+          width: 100%;
+        }
       }
     }
     .h-icons {
       display: flex;
       gap: 2rem;
       padding-top: 2rem;
-      .icons {
-        width: 2rem;
-        aspect-ratio: 1/1;
+      .icon {
+        img {
+          width: 4rem;
+          aspect-ratio: 1/1;
+        }
       }
     }
   }
