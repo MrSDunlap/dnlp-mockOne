@@ -1,0 +1,29 @@
+// CTAs for the site -------------------------
+
+@mixin primary-cta {
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--blue-2);
+  color: var(--white);
+  cursor: pointer;
+  transition: all 150ms ease;
+
+  &:hover {
+    background-color: var(--blue-4);
+    color: var(--white);
+  }
+}
+
+@mixin secondary-cta {
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 2px solid var(--blue-2);
+  color: var(--blue-2);
+  transition: all 150ms ease;
+
+  &:hover {
+    border-color: var(--blue-4);
+    color: var(--blue-4);
+  }
+}

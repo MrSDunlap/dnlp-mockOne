@@ -10,9 +10,16 @@
   .home-container {
     height: auto;
     width: clamp(300px, 90%, 1000px);
+
+    @include g.breakpoint-up(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .h-title {
+      color: var(--blue-2);
       @include g.header-02;
-      color: var(--darkgrey-01);
       padding-bottom: 1rem;
     }
     .professions-container {
@@ -58,6 +65,7 @@
       }
     }
     .h-body-copy {
+      font-family: "Comfortaa", cursive;
       @include g.body-01;
       color: var(--darkgrey-00);
       padding: 2rem 0;
@@ -78,11 +86,22 @@
         border: none;
         color: var(--white);
         @include g.sub-header-03;
+        @include g.primary-cta;
+
+        &:last-child {
+          @include g.secondary-cta;
+        }
+      }
+      @include g.breakpoint-down(tablet) {
+        .btn {
+          font-size: 1.6rem;
+        }
       }
       @include g.breakpoint-down(mobile) {
         flex-direction: column;
         .btn {
           width: 100%;
+          font-size: 1.4rem;
         }
       }
     }
@@ -90,10 +109,17 @@
       display: flex;
       gap: 2rem;
       padding-top: 2rem;
-      .icon {
-        img {
-          width: 4rem;
-          aspect-ratio: 1/1;
+      svg {
+        width: 3rem;
+        aspect-ratio: 1/1;
+        color: var(--blue-2);
+        transition: all 150ms ease;
+
+        &:hover {
+          color: var(--blue-4);
+        }
+        path {
+          fill: currentColor;
         }
       }
     }

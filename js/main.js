@@ -10,15 +10,24 @@ import professions from "./modules/professions.js";
 const nav = document.querySelector(".nav");
 nav.innerHTML = content;
 
+let logo = document.querySelector(".logo");
+
 let burger = document.querySelector(".burger");
 let menu = document.querySelector(".hidden-nav");
 const topBar = document.querySelector(".top");
-const midBar = document.querySelector(".mid");
 const bottomBar = document.querySelector(".bottom");
+
+// add background blur to the navigation on mobile
+
+let bg = document.querySelector(".nav-bg");
+// let blur = document.querySelector(".bg-blur");
 
 burger.addEventListener("click", () => {
   menu.classList.toggle("active");
   topBar.classList.toggle("top-rotation");
   bottomBar.classList.toggle("bottom-rotation");
-  midBar.classList.toggle("fade");
+
+  bg.classList.toggle("bg-blur");
+
+  logo.classList.toggle("logo-invert");
 });
