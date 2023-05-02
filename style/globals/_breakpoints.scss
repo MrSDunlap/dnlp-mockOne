@@ -1,12 +1,21 @@
 // breakpoints 768px | 425px
+* {
+  font-size: 62.5%;
+}
 
-$breakpoints-up: (
-  "medium": 76.8rem,
-  "small": 42.5rem,
+$breakpoints: (
+  "desktop": 1440px,
+  "tablet": 778px,
+  "mobile": 425px,
 );
 
-@mixin breakpoint($size) {
-  @media (min-width: map-get($breakpoints-up, $size)) {
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
     @content;
   }
 } ;
