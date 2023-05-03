@@ -4,7 +4,7 @@
 import content from "./modules/nav.js";
 
 // professions module import
-import professions from "./modules/professions.js";
+import cycleArray from "./modules/professions.js";
 
 // Select nav and add the nav content from the module
 const nav = document.querySelector(".nav");
@@ -31,3 +31,6 @@ burger.addEventListener("click", () => {
 
   logo.classList.toggle("logo-invert");
 });
+
+// Professions counter=====================================
+setInterval(cycleArray, 4000);

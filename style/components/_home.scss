@@ -33,33 +33,23 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        animation: jobLoop 10000ms 3000ms infinite;
         transition: all 150ms ease;
+        // This section still needs to be fleshed out a bit more ===============
+        animation: slider infinite 4000ms;
 
         @include g.sub-header-01;
-        color: var(--accent);
+        color: var(--blue-4);
+        li {
+          list-style: none;
+          height: 1.8rem;
+        }
 
-        @keyframes jobLoop {
+        @keyframes slider {
           0% {
-            transform: translateY(-38px);
-          }
-          16.66% {
-            transform: translateY(-76px);
-          }
-          33.32% {
-            transform: translateY(-114px);
-          }
-          49.98% {
-            transform: translateY(-152px);
-          }
-          66.64% {
-            transform: translateY(-190px);
-          }
-          83.30% {
-            transform: translateY(-228px);
+            transform: translateY(0);
           }
           100% {
-            transform: translateY(0px);
+            transform: translateY(-1.8rem);
           }
         }
       }
