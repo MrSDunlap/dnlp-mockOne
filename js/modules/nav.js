@@ -7,9 +7,9 @@ let navItems = {
 };
 
 const links = {
-  one: "#services",
-  two: "#about",
-  three: "#contact",
+  one: "./services.html",
+  two: "./about.html",
+  three: "./contact.html",
 };
 
 const content = `

@@ -5,7 +5,7 @@ html {
 }
 // header ---------------
 .main-header {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
@@ -32,7 +32,7 @@ html {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: auto;
   display: flex;
@@ -79,9 +79,9 @@ nav {
           padding: 0.5rem 1rem;
           border-radius: 50vw;
           border: solid 1px transparent;
-          transition: background-color 150ms ease;
+          transition: border-color 150ms ease;
           &:hover {
-            background-color: var(--blue-4);
+            border-color: var(--blue-3);
           }
           .burger {
             width: 3rem;
@@ -265,7 +265,7 @@ nav {
 }
 
 .nav-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100%;
   opacity: 0;

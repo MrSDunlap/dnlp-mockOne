@@ -1,0 +1,29 @@
+@use "../globals/" as g;
+
+body {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(300px, 90%, 1000px);
+  height: 100vh;
+  img {
+    width: 5rem;
+  }
+  .name {
+    color: var(--blue-2);
+    @include g.header-03;
+  }
+  .pronouns {
+    color: var(--blue-4);
+    @include g.body-03;
+  }
+  .description {
+    color: var(--blue-2);
+    @include g.body-01;
+  }
+}
