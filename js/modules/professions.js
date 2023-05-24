@@ -6,13 +6,9 @@ let professions = [
 
 let count = 0;
 
-// selecting the container to append to ========
-let container = document.querySelector(".professions");
-
 function cycleArray() {
   let profession = professions[count];
-  let newItem = document.createElement("li");
-  container.append(newItem);
+  let newItem = document.querySelector(".professions");
 
   newItem.innerHTML = profession;
 

@@ -23,10 +23,17 @@
       padding-bottom: 1rem;
     }
     .professions-container {
-      height: 2rem;
+      height: 3rem;
       width: 100%;
       overflow: hidden;
       position: relative;
+
+      @include g.breakpoint-down(tablet) {
+        height: 2.8rem;
+      }
+      @include g.breakpoint-down(mobile) {
+        height: 2.2rem;
+      }
       .professions {
         position: absolute;
         top: 0;
@@ -47,13 +54,26 @@
           list-style: none;
           height: 1.8rem;
         }
+        @include g.breakpoint-down(tablet) {
+          @include g.sub-header-02;
+          align-items: flex-start;
+        }
+        @include g.breakpoint-down(mobile) {
+          @include g.sub-header-03;
+        }
 
         @keyframes slider {
           0% {
-            transform: translateY(2rem);
+            transform: translateY(3rem);
+          }
+          25% {
+            transform: translateY(0rem);
+          }
+          75% {
+            transform: translateY(0rem);
           }
           100% {
-            transform: translateY(-2rem);
+            transform: translateY(-3rem);
           }
         }
       }
