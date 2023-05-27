@@ -1,3 +1,25 @@
-#services {
-  height: 100vh;
+#service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .s-container {
+    width: clamp(270px, 90%, 1000px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+
+    .option {
+      width: clamp(270px, 90%, 350px);
+      padding: 2rem;
+      background-color: var(--blue-4);
+      border-radius: 0.5rem;
+      transition: transform 350ms ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
 }
