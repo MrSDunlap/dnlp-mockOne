@@ -1,3 +1,5 @@
+@use "../globals/" as g;
+
 #service {
   display: flex;
   justify-content: center;
@@ -18,7 +20,13 @@
       transition: transform 350ms ease;
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
+      }
+
+      img {
+      }
+      .option-title {
+        @include;
       }
     }
   }
