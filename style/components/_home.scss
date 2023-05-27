@@ -85,6 +85,7 @@
       padding: 2rem 0;
       @include g.breakpoint-down(tablet) {
         @include g.body-02;
+        padding: 1rem 0 2rem;
       }
       @include g.breakpoint-down(mobile) {
         @include g.body-03;
@@ -137,6 +138,9 @@
         path {
           fill: currentColor;
         }
+      }
+      @include g.breakpoint-down(mobile) {
+        justify-content: center;
       }
     }
   }
