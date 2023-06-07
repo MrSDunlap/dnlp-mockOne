@@ -6,6 +6,7 @@
 $breakpoints: (
   "desktop": 1440px,
   "tablet": 778px,
+  "mid": 530px,
   "mobile": 425px,
 );
 
@@ -18,4 +19,4 @@ $breakpoints: (
   @media (max-width: map-get($breakpoints, $size)) {
     @content;
   }
-} ;
+}

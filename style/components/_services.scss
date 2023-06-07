@@ -6,27 +6,36 @@
   align-items: center;
 
   .s-container {
-    width: clamp(270px, 90%, 1000px);
+    flex-basis: clamp(270px, 90%, 1000px);
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
 
+    @include g.breakpoint-down(tablet) {
+      gap: 2rem;
+    }
+    @include g.breakpoint-down(mid) {
+      flex-wrap: wrap;
+    }
+
     .option {
-      width: clamp(270px, 90%, 350px);
+      width: clamp(230px, 90%, 350px);
       padding: 2rem;
-      background-color: var(--blue-4);
+      background-color: var(--lightgrey-01);
       border-radius: 0.5rem;
       transition: transform 350ms ease;
 
       &:hover {
         transform: scale(1.03);
       }
-
-      img {
-      }
       .option-title {
-        @include;
+        text-decoration: none;
+        color: var(--blue-2);
+        @include g.header-03;
+      }
+      .option-description {
+        @include g.body-01;
+        color: var(--dark);
       }
     }
   }
